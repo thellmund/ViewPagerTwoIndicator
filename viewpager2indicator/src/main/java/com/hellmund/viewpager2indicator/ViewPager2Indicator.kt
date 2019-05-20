@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 import kotlin.math.min
@@ -35,19 +34,9 @@ class ViewPager2Indicator @JvmOverloads constructor(
     private val onPageChange = object : ViewPager2.OnPageChangeCallback() {
 
         override fun onPageSelected(position: Int) {
-            Log.d("ViewPager2Indicator", "onPageSelected")
             super.onPageSelected(position)
             currentPosition = position
             invalidate()
-        }
-
-        override fun onPageScrollStateChanged(state: Int) {
-            super.onPageScrollStateChanged(state)
-            Log.d("ViewPager2Indicator", "onPageScrollStateChanged")
-        }
-
-        override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-            Log.d("ViewPager2Indicator", "onPageScrolled (position $position)")
         }
 
     }
@@ -58,7 +47,7 @@ class ViewPager2Indicator @JvmOverloads constructor(
         val viewPager = _viewPager ?: return
         val count = viewPager.adapter?.itemCount ?: return
 
-        if (count <= 1) {
+        if (count <= 0) {
             return
         }
 
