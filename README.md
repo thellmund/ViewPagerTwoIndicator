@@ -25,7 +25,7 @@ allprojects {
 }
 
 // build.gradle (app-level)
-implementation 'com.github.thellmund:ViewPager2Indicator:0.8.0’
+implementation 'com.github.thellmund:ViewPager2Indicator:0.8.1’
 ```
 
 2. Add a `ViewPager2Indicator` in your XML layout.
