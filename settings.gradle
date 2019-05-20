@@ -1,0 +1,2 @@
+include ':sample', ':viewpager2indicator'
+rootProject.name='ViewPager2Indicator'

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ViewPager2Indicator">
+        <attr name="selectedFillColor" format="color" />
+        <attr name="unselectedFillColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="spacing" format="dimension" />
+    </declare-styleable>
+</resources>
