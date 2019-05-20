@@ -126,6 +126,12 @@ class ViewPager2Indicator @JvmOverloads constructor(
         }
     }
 
+    /**
+     * Attaches [ViewPager2Indicator] to a [ViewPager2].
+     *
+     * @param viewPager The [ViewPager2] to which to attach
+     * @param currentItem The index of the item you want to display (optional)
+     */
     @JvmOverloads
     fun attachTo(
             viewPager: ViewPager2,
@@ -140,6 +146,18 @@ class ViewPager2Indicator @JvmOverloads constructor(
         _viewPager = viewPager
         _viewPager?.registerOnPageChangeCallback(onPageChange)
         _viewPager?.currentItem = currentItem
+        invalidate()
+    }
+
+    /**
+     * Reattaches [ViewPager2Indicator] to the already attached [ViewPager2]. This is necessary if
+     * the content of the [ViewPager2]'s adapter changes.
+     *
+     * When called, this method will cause [ViewPager2Indicator] to again request its layout and to
+     * invalidate itself.
+     */
+    fun reattach() {
+        requestLayout()
         invalidate()
     }
 
